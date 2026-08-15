@@ -49,7 +49,7 @@ export function UaeServiceBanner() {
 
       <div className="relative mx-auto grid min-h-[552px] max-w-[1365px] grid-cols-[54%_46%] max-[820px]:grid-cols-1">
         <div className="z-[2] px-[clamp(28px,3vw,44px)] py-4 max-[1050px]:py-8 max-md:py-12">
-          <p className={`mb-3 inline-block border-b-2 border-[#34363a] pb-2 text-[12px] font-extrabold tracking-[.08em] text-[#4f5256] uppercase transition-[transform,opacity] duration-700 ease-[cubic-bezier(.16,1,.3,1)] motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}>How we operate</p>
+          <p className={`section-eyebrow mb-3 transition-[transform,opacity] duration-700 ease-[cubic-bezier(.16,1,.3,1)] motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}>How we operate</p>
           <h2 className={`max-w-[650px] text-[clamp(40px,4vw,54px)] leading-[1.04] font-extrabold tracking-[-2px] text-[#1d2024] transition-[transform,opacity] delay-100 duration-1000 ease-[cubic-bezier(.16,1,.3,1)] motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-14 opacity-0"}`}>We make trust part of every experience</h2>
 
           <div className={`mt-9 flex flex-wrap gap-3 transition-[transform,opacity] delay-200 duration-900 ease-[cubic-bezier(.16,1,.3,1)] motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`} role="tablist" aria-label="Company information">
