@@ -10,18 +10,18 @@ export function Header() {
 
   return (
     <header className="relative z-20 border-b border-[#e9eaec] bg-white text-[#17191c]">
-      <div className="mx-auto grid h-24 w-[calc(100%_-_44px)] max-w-[1180px] grid-cols-[190px_1fr_auto] items-center gap-[30px] max-[1080px]:grid-cols-[150px_1fr_auto] max-[1080px]:gap-[18px] max-[780px]:flex max-[780px]:h-[75px] max-[780px]:w-full max-[780px]:justify-between max-[780px]:px-[18px]">
+      <div className="mx-auto grid h-24 w-[calc(100%_-_44px)] max-w-[1180px] grid-cols-[190px_1fr_auto] items-center gap-[30px] max-[1080px]:grid-cols-[150px_1fr_auto] max-[1080px]:gap-[18px] max-[900px]:flex max-[900px]:h-[75px] max-[900px]:w-full max-[900px]:justify-between max-[900px]:px-[18px]">
         <Link className="flex items-center" href="/#home" aria-label="JM Car Wash home">
-          <Image className="h-[70px] w-[160px] scale-[1.28] object-contain max-[1080px]:w-[140px] max-[780px]:h-[58px] max-[780px]:w-[130px]" src="/images/logo1.png" alt="JM Car Wash" width={640} height={400} preload />
+          <Image className="h-[70px] w-[160px] scale-[1.28] object-contain max-[1080px]:w-[140px] max-[900px]:h-[58px] max-[900px]:w-[130px]" src="/images/logo1.png" alt="JM Car Wash" width={640} height={400} preload />
         </Link>
 
-        <nav className={`flex h-full items-center justify-center gap-[35px] max-[1080px]:gap-5 max-[780px]:absolute max-[780px]:top-[75px] max-[780px]:right-0 max-[780px]:left-0 max-[780px]:h-auto max-[780px]:flex-col max-[780px]:items-stretch max-[780px]:gap-0 max-[780px]:bg-white max-[780px]:px-5 max-[780px]:pt-2 max-[780px]:pb-5 max-[780px]:shadow-[0_18px_28px_#1c1d2030] max-[780px]:transition-all ${isOpen ? "max-[780px]:visible max-[780px]:translate-y-0 max-[780px]:opacity-100" : "max-[780px]:invisible max-[780px]:-translate-y-2 max-[780px]:opacity-0"}`} aria-label="Primary navigation">
+        <nav className={`flex h-full items-center justify-center gap-[35px] max-[1080px]:gap-5 max-[900px]:absolute max-[900px]:top-[75px] max-[900px]:right-0 max-[900px]:left-0 max-[900px]:h-auto max-[900px]:flex-col max-[900px]:items-stretch max-[900px]:gap-0 max-[900px]:bg-white max-[900px]:px-5 max-[900px]:pt-2 max-[900px]:pb-5 max-[900px]:shadow-[0_18px_28px_#1c1d2030] max-[900px]:transition-all ${isOpen ? "max-[900px]:visible max-[900px]:translate-y-0 max-[900px]:opacity-100" : "max-[900px]:invisible max-[900px]:-translate-y-2 max-[900px]:opacity-0"}`} aria-label="Primary navigation">
           {primaryNavigation.map((item) => (
-            <Link className="relative flex h-full items-center whitespace-nowrap text-[13px] font-bold text-[#303236] first:after:absolute first:after:right-0 first:after:bottom-[25px] first:after:left-0 first:after:h-0.5 first:after:bg-[#333] max-[780px]:h-auto max-[780px]:border-b max-[780px]:border-[#ececef] max-[780px]:px-0.5 max-[780px]:py-3.5 max-[780px]:first:after:hidden" key={item.label} href={item.href} onClick={() => setIsOpen(false)}>
+            <Link className="relative flex h-full items-center whitespace-nowrap text-[13px] font-bold text-[#303236] first:after:absolute first:after:right-0 first:after:bottom-[25px] first:after:left-0 first:after:h-0.5 first:after:bg-[#333] max-[900px]:h-auto max-[900px]:border-b max-[900px]:border-[#ececef] max-[900px]:px-0.5 max-[900px]:py-3.5 max-[900px]:first:after:hidden" key={item.label} href={item.href} onClick={() => setIsOpen(false)}>
               {item.label}
             </Link>
           ))}
-          <div className="mt-4 hidden grid-cols-2 gap-3 max-[780px]:grid">
+          <div className="mt-4 hidden grid-cols-2 gap-3 max-[900px]:grid">
             <a className="flex h-12 items-center justify-center gap-2 rounded-xl bg-[#292b2e] px-3 text-xs font-extrabold text-white" href="https://wa.me/971528843059?text=Hello%20JM%20Car%20Wash%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noreferrer" onClick={() => setIsOpen(false)}>
               <span className="text-base" aria-hidden="true">◉</span> WhatsApp
             </a>
@@ -33,7 +33,7 @@ export function Header() {
 
         <div className="flex items-center gap-[15px]">
           <a
-            className="group flex h-[44px] min-w-[190px] items-center justify-center gap-2.5 whitespace-nowrap rounded-lg bg-[#292b2e] px-[16px] text-xs font-extrabold text-white shadow-[0_8px_20px_#15151524] [animation:cta-attention_3.2s_ease-in-out_infinite] transition-colors hover:bg-black motion-reduce:animate-none max-[1080px]:hidden"
+            className="group flex h-[44px] min-w-[190px] items-center justify-center gap-2.5 whitespace-nowrap rounded-lg bg-[#292b2e] px-[16px] text-xs font-extrabold text-white shadow-[0_8px_20px_#15151524] [animation:cta-attention_3.2s_ease-in-out_infinite] transition-colors hover:bg-black motion-reduce:animate-none max-[900px]:hidden"
             href="https://wa.me/971528843059?text=Hello%20JM%20Car%20Wash%2C%20I%20would%20like%20to%20book%20an%20appointment."
             target="_blank"
             rel="noreferrer"
@@ -47,11 +47,11 @@ export function Header() {
             </span>
             Book on WhatsApp
           </a>
-          <a className="group flex h-[44px] min-w-[112px] items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#dfe1e3] bg-white px-3 text-xs font-extrabold text-[#292b2e] shadow-[0_7px_18px_rgb(25_27_30_/_0.07)] [animation:cta-attention_3.2s_ease-in-out_.55s_infinite] transition-colors hover:border-[#bfc2c6] hover:bg-[#f4f5f6] motion-reduce:animate-none max-[780px]:hidden" href="tel:+971528843059" aria-label="Call JM Car Wash at +971 528843059">
+          <a className="group flex h-[44px] min-w-[112px] items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#dfe1e3] bg-white px-3 text-xs font-extrabold text-[#292b2e] shadow-[0_7px_18px_rgb(25_27_30_/_0.07)] [animation:cta-attention_3.2s_ease-in-out_.55s_infinite] transition-colors hover:border-[#bfc2c6] hover:bg-[#f4f5f6] motion-reduce:animate-none max-[900px]:hidden" href="tel:+971528843059" aria-label="Call JM Car Wash at +971 528843059">
             <span className="grid size-7 place-items-center rounded-full bg-[#eff0f1] text-sm transition-transform group-hover:scale-110" aria-hidden="true">☎</span>
             <span>Call Us</span>
           </a>
-          <button className="hidden size-11 rounded-lg border-0 bg-[#292b2e] p-[11px] max-[780px]:block" type="button" aria-label="Toggle navigation" aria-expanded={isOpen} onClick={() => setIsOpen((current) => !current)}>
+          <button className="hidden size-11 rounded-lg border-0 bg-[#292b2e] p-[11px] max-[900px]:block" type="button" aria-label="Toggle navigation" aria-expanded={isOpen} onClick={() => setIsOpen((current) => !current)}>
             <span className="my-1 block h-0.5 rounded-sm bg-white" /><span className="my-1 block h-0.5 rounded-sm bg-white" /><span className="my-1 block h-0.5 rounded-sm bg-white" />
           </button>
         </div>

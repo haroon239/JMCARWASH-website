@@ -5,7 +5,6 @@ const quickLinks = [
   ["Home", "/#home"],
   ["About Us", "/#about"],
   ["Services", "/#services"],
-  ["Our Team", "/#team"],
   ["Gallery", "/#gallery"],
   ["Contact Us", "/#contact"],
 ] as const;
