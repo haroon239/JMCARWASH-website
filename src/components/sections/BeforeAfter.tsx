@@ -9,7 +9,7 @@ export function BeforeAfter() {
   return (
     <section className="bg-[#f5f6f7] px-[22px] py-20 max-md:py-14" id="gallery">
       <div className="mx-auto max-w-[1120px] rounded-[26px] border border-[#e7e9eb] bg-white px-8 pt-9 pb-8 shadow-[0_18px_50px_#2023280d] max-sm:px-4">
-        <header className="mb-6 text-center"><p className="mb-2 text-[10px] font-extrabold tracking-[.12em] text-[#777a7e] uppercase">Results you can see</p><h2 className="text-[clamp(30px,3.5vw,45px)] font-extrabold tracking-[-1.4px] text-[#191b1e]">See the True Difference</h2></header>
+        <header className="mb-6 text-center"><p className="section-eyebrow section-eyebrow--center mb-3">Results you can see</p><h2 className="text-[clamp(30px,3.5vw,45px)] font-extrabold tracking-[-1.4px] text-[#191b1e]">See the True Difference</h2></header>
 
         <div className="relative mx-auto h-[360px] max-w-[900px] overflow-hidden rounded-2xl bg-[linear-gradient(180deg,#dfe1e3,#f7f7f7)] max-md:h-[285px] max-sm:h-[220px]">
           <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(#8e9296_1px,transparent_1px)] [background-size:18px_18px]" />

@@ -9,7 +9,7 @@ export function Hero() {
 
       <div className="relative z-[2] mx-auto grid min-h-[650px] w-[calc(100%_-_44px)] max-w-[1180px] grid-cols-[51%_49%] items-stretch max-[900px]:grid-cols-[54%_46%] max-[700px]:flex max-[700px]:min-h-0 max-[700px]:w-full max-[700px]:flex-col">
         <div className="z-[2] animate-[hero-slide-right_1.7s_cubic-bezier(.22,.75,.22,1)_both] pt-[84px] pr-5 pb-[50px] pl-[5px] will-change-transform motion-reduce:animate-none max-[700px]:px-6 max-[700px]:pt-[43px] max-[700px]:pb-[25px] max-[430px]:pt-[38px]">
-          <p className="mb-5 text-xs font-extrabold tracking-[.08em] text-[#65686c] uppercase max-[700px]:mb-[13px]">Expert car service</p>
+          <p className="section-eyebrow mb-5 max-[700px]:mb-[13px]">Expert car service</p>
           <h1 className="text-[clamp(45px,4.15vw,63px)] leading-[1.08] font-normal tracking-[-2.5px] max-[900px]:text-[47px] max-[700px]:text-[clamp(37px,10.8vw,49px)] max-[700px]:leading-[1.05] max-[700px]:tracking-[-1.8px] max-[430px]:text-[38px]">
             <strong className="font-[850]">Complete Car Care,</strong><br />Premium Service<br />
             <em className="font-['Segoe_Script','Brush_Script_MT',cursive] text-[.82em] font-normal tracking-[-1px]">Across UAE</em>

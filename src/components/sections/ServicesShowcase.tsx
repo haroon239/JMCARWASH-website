@@ -8,7 +8,7 @@ export function ServicesShowcase() {
       <div className="mx-auto max-w-[1120px]">
         <header className="mb-8 flex items-end justify-between gap-6 max-sm:flex-col max-sm:items-start">
           <div>
-            <p className="mb-2 text-[10px] font-extrabold tracking-[.12em] text-[#777a7e] uppercase">Our services</p>
+            <p className="section-eyebrow mb-3">Our services</p>
             <h2 className="text-[clamp(30px,3.5vw,45px)] leading-[1.04] font-extrabold tracking-[-1.5px] text-[#191b1e]">Quality Car Care<br />at Fair Prices</h2>
           </div>
           {/* <a className="flex h-11 items-center gap-4 rounded-lg border border-[#e3e5e7] bg-white px-5 text-xs font-extrabold text-[#33363a] shadow-[0_8px_22px_#2023280b] transition hover:-translate-y-0.5 hover:shadow-lg" href="#contact">View All Services <span className="grid size-6 place-items-center rounded-full bg-[#e9eaec]">→</span></a> */}

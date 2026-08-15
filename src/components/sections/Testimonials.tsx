@@ -68,7 +68,7 @@ export function Testimonials() {
 
       <div className="relative mx-auto max-w-[1180px]">
         <header className="mb-16 text-center max-md:mb-12">
-          <p className="mb-3 text-[10px] font-extrabold tracking-[.16em] text-[#73767a] uppercase">Customer stories</p>
+          <p className="section-eyebrow section-eyebrow--center mb-4">Customer stories</p>
           <h2 className="mx-auto max-w-[650px] text-[clamp(34px,4vw,52px)] leading-[1.05] font-extrabold tracking-[-1.8px] text-[#1d2024]">What Our Customers<br /><span className="font-normal text-[#5f6368]">Are Saying</span></h2>
         </header>
 

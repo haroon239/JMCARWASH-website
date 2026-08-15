@@ -22,7 +22,7 @@ export function CleaningIntro() {
         </div>
 
         <div className="flex flex-col justify-center px-14 py-12 max-[1050px]:px-9 max-sm:px-6 max-sm:py-10">
-          <p className="mb-3 text-[10px] font-extrabold tracking-[.12em] text-[#777a7e] uppercase">Car wash</p>
+          <p className="section-eyebrow mb-4">Car wash</p>
           <h2 className="max-w-[500px] text-[clamp(30px,3.3vw,46px)] leading-[1.08] font-extrabold tracking-[-1.5px] text-[#191b1e]">Expert Car Cleaning<br />with Premium Care</h2>
           <p className="mt-5 max-w-[540px] text-[13px] leading-6 text-[#686b70]">Give your car the shine it deserves with our premium car wash services. We use high-quality products and advanced techniques to ensure a spotless finish.</p>
 

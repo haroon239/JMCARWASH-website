@@ -39,7 +39,7 @@ export function WhyChooseUs() {
     <section className="bg-[#fafafa] px-[22px] pt-20 pb-9 max-md:pt-14" id="services">
       <div className="mx-auto max-w-[1120px]">
         <header className="mb-8 text-center">
-          <p className="mb-2 text-[10px] font-extrabold tracking-[.12em] text-[#777a7e] uppercase">Why choose us</p>
+          <p className="section-eyebrow section-eyebrow--center mb-3">Why choose us</p>
           <h2
             ref={headingRef}
             aria-label="Your Satisfaction is Our Mission"

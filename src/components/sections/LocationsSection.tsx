@@ -29,7 +29,7 @@ export function LocationsSection() {
 
       <div className="relative mx-auto max-w-[1160px]">
         <header className="mx-auto mb-12 max-w-[680px] text-center">
-          <p className={`mb-3 text-[11px] font-extrabold tracking-[.17em] text-[#777a7e] uppercase transition-[transform,opacity] duration-700 motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}>Closer care, wherever you are</p>
+          <p className={`section-eyebrow section-eyebrow--center mb-4 transition-[transform,opacity] duration-700 motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}>Closer care, wherever you are</p>
           <h2 className={`text-[clamp(38px,4.5vw,58px)] leading-[1.02] font-extrabold tracking-[-2.2px] text-[#1d2024] transition-[transform,opacity] delay-100 duration-1000 ease-[cubic-bezier(.16,1,.3,1)] motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${isVisible ? "translate-y-0 opacity-100" : "translate-y-9 opacity-0"}`}>Premium car care across Dubai</h2>
           <p className={`mx-auto mt-5 max-w-[580px] text-[15px] leading-7 text-[#6a6d71] transition-[transform,opacity] delay-200 duration-900 motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none ${isVisible ? "translate-y-0 opacity-100" : "translate-y-7 opacity-0"}`}>Professional washing and detailing conveniently available in the communities you know.</p>
         </header>
