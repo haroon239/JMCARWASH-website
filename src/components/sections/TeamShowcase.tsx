@@ -3,8 +3,8 @@ import Image from "next/image";
 const members = [
   { name: "Ahmed Al Mansoori", role: "Senior Technician", image: "/images/team-v2-1-DpkybW-W.jpg" },
   { name: "Fatima Al Zaabi", role: "Service Advisor", image: "/images/team-v2-2-BucXl6PA.jpg" },
-  { name: "Omar Hassan", role: "Detailing Specialist", image: "/images/team-v2-3-DU3TRt_z.jpg" },
-  { name: "Layla Khalid", role: "Quality Inspector", image: "/images/team-v2-4-CDWJ6soP.jpg" },
+  { name: "Layla Khalid", role: "Detailing Specialist", image: "/images/team-v2-3-DU3TRt_z.jpg" },
+  { name: "Omar Hassan", role: "Quality Inspector", image: "/images/team-v2-4-CDWJ6soP.jpg" },
 ] as const;
 
 export function TeamShowcase() {
