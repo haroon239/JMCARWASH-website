@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const testimonials = [
-  { name: "Aisha Rahman", role: "Dubai Marina", image: "/images/testimonial-v2-img1-BGl5DInD.jpg", quote: "The team arrived exactly on time and treated my car with real care. The interior feels completely refreshed and the exterior finish is exceptional." },
-  { name: "Omar Khalid", role: "Business Owner", image: "/images/testimonial-v2-img2-BEDniIH0.jpg", quote: "Professional service from booking to handover. The attention to detail was impressive, and the result looked better than I expected." },
-  { name: "Sara Ahmed", role: "Jumeirah Resident", image: "/images/testimonial-v2-img3-Dr2J8lNN.jpg", quote: "Convenient, reliable, and beautifully finished. JM Car Wash has become my first choice whenever my car needs premium detailing." },
+  { name: "Omar Khalid", role: "Dubai Marina", image: "/images/testimonial-v2-img1-BGl5DInD.jpg", quote: "The team arrived exactly on time and treated my car with real care. The interior feels completely refreshed and the exterior finish is exceptional." },
+  { name: "Aisha Rahman", role: "Business Owner", image: "/images/testimonial-v2-img2-BEDniIH0.jpg", quote: "Professional service from booking to handover. The attention to detail was impressive, and the result looked better than I expected." },
+  { name: "Ahmed Saleh", role: "Jumeirah Resident", image: "/images/testimonial-v2-img3-Dr2J8lNN.jpg", quote: "Convenient, reliable, and beautifully finished. JM Car Wash has become my first choice whenever my car needs premium detailing." },
   { name: "Daniel Morgan", role: "Fleet Manager", image: "/images/testimonial-v2-img5-Da-Qf17u.jpg", quote: "We trust JM with our company vehicles because the quality is consistent every time. Their team is efficient, courteous, and dependable." },
-  { name: "Mariam Saleh", role: "Abu Dhabi", image: "/images/testimonial-v2-img6-BAtgYM_v.jpg", quote: "The booking process was simple and the service was outstanding. Every surface was cleaned carefully and the car looked showroom ready." },
+  { name: "Mohammed Al Mansoori", role: "Abu Dhabi", image: "/images/testimonial-v2-img6-BAtgYM_v.jpg", quote: "The booking process was simple and the service was outstanding. Every surface was cleaned carefully and the car looked showroom ready." },
 ] as const;
 
 const carouselItems = [testimonials[testimonials.length - 1], ...testimonials, testimonials[0], testimonials[1]];
