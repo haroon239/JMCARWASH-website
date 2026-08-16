@@ -8,10 +8,10 @@ export function CleaningIntro() {
     <section className="bg-[#fafafa] px-[22px] pt-6 pb-6" id="about">
       <div className="mx-auto grid max-w-[1120px] grid-cols-[49%_51%] overflow-hidden rounded-2xl border border-[#eceeef] bg-white shadow-[0_16px_45px_#2023280b] max-[820px]:grid-cols-1">
         <div className="relative min-h-[390px] overflow-hidden max-sm:min-h-[330px]">
-          <Image className="absolute inset-0 h-full w-full object-cover" src="/images/man-with-car-wash-3.jfif" alt="JM Car Wash specialist pressure washing a car" width={922} height={1152} />
+          <Image className="absolute inset-0 h-full w-full object-cover" src="/images/man-with-car-wash-3.jpg" alt="JM Car Wash specialist pressure washing a car" width={922} height={1152} />
           <div className="absolute inset-0 bg-gradient-to-r from-black/5 to-transparent" />
           <div className="absolute right-4 bottom-4 h-[55%] w-[42%] overflow-hidden rounded-2xl border-[5px] border-white shadow-2xl max-sm:w-[45%]">
-            <Image className="h-full w-full object-cover" src="/images/man-with-car-wash-1.jfif" alt="Detailed hand washing of a vehicle" width={1024} height={1052} />
+            <Image className="h-full w-full object-cover" src="/images/man-with-car-wash-1.jpg" alt="Detailed hand washing of a vehicle" width={1024} height={1052} />
           </div>
           <div className="absolute top-0 right-0 grid h-[150px] w-[150px] place-items-center rounded-bl-3xl bg-[#f2f3f4]/95 text-center shadow-lg backdrop-bl-sm max-sm:size-[125px]">
             <div>
