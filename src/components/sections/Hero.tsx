@@ -65,7 +65,7 @@ export function Hero() {
         <div className="relative min-h-[650px] max-[700px]:mt-0 max-[700px]:min-h-[390px] max-[430px]:min-h-[360px]">
           <div className="absolute right-[-90px] bottom-[-130px] size-[650px] rounded-full bg-[#dadddf] max-[430px]:size-[470px]" aria-hidden="true" />
           <div className="absolute right-[-40px] bottom-0 z-[2] h-[610px] w-[min(570px,105%)] animate-[hero-image-reveal_.9s_both] overflow-hidden rounded-tl-[48%] max-[900px]:right-[-50px] max-[900px]:w-[120%] max-[700px]:right-0 max-[700px]:h-[390px] max-[700px]:w-full max-[700px]:animate-none max-[700px]:rounded-none max-[430px]:h-[360px]">
-            <Image className="h-full w-full object-cover object-[48%_center] saturate-[.38] contrast-[.92] max-[700px]:object-[center_43%] max-[700px]:saturate-[.45] max-[700px]:contrast-[.95]" src="/images/man with car wash1.jfif" alt="JM Car Wash professional cleaning a vehicle" width={1024} height={1052} priority />
+            <Image className="h-full w-full object-cover object-[48%_center] saturate-[.38] contrast-[.92] max-[700px]:object-[center_43%] max-[700px]:saturate-[.45] max-[700px]:contrast-[.95]" src="/images/man-with-car-wash-1.jfif" alt="JM Car Wash professional cleaning a vehicle" width={1024} height={1052} priority />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,#f5f6f7_0,transparent_18%),linear-gradient(0deg,#dfe1e240_0,transparent_25%)] max-[700px]:bg-[linear-gradient(180deg,#f4f5f6_0,transparent_18%)]" />
           </div>
 
