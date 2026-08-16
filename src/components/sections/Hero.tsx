@@ -69,7 +69,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-[linear-gradient(90deg,#f5f6f7_0,transparent_18%),linear-gradient(0deg,#dfe1e240_0,transparent_25%)] max-[700px]:bg-[linear-gradient(180deg,#f4f5f6_0,transparent_18%)]" />
           </div>
 
-          <div className="absolute top-[65px] left-1.5 z-[4] size-[146px] rounded-full border border-[#dfe1e3] bg-white text-[#333] shadow-[0_10px_32px_#20212426] max-[900px]:left-[-5px] max-[900px]:size-[125px] max-[700px]:top-[15px] max-[700px]:left-[22px] max-[430px]:size-[108px]" aria-label="Welcome to JM Car Wash and Cleaning, since 2021">
+          <div className="absolute top-[42px] right-[24px] z-[4] size-[146px] rounded-full border border-[#dfe1e3] bg-white text-[#333] shadow-[0_10px_32px_#20212426] max-[900px]:top-[30px] max-[900px]:right-[18px] max-[900px]:size-[125px] max-[700px]:hidden" aria-label="Welcome to JM Car Wash and Cleaning, since 2021">
             <div className="absolute inset-0 animate-[spin_18s_linear_infinite]" aria-hidden="true">
               {[...circularMessage].map((character, index) => (
                 <span className="absolute top-1/2 left-1/2 z-[2] h-[65px] origin-top-left text-[8px] font-black tracking-[.12px] max-[900px]:h-[55px] max-[900px]:text-[7px] max-[430px]:h-[47px] max-[430px]:text-[6px]" key={`${character}-${index}`} style={{ transform: `rotate(${index * (360 / circularMessage.length)}deg) translateY(-100%)` }}>{character}</span>
