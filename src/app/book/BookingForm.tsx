@@ -7,6 +7,8 @@ const initialState: BookingState = { status: "idle", message: "" };
 
 const fieldClass = "mt-2 h-13 w-full rounded-xl border border-[#dfe1e3] bg-white px-4 text-sm text-[#202226] outline-none transition placeholder:text-[#969a9f] focus:border-[#292b2e] focus:ring-3 focus:ring-[#292b2e]/8";
 
+const workingDays = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+
 export function BookingForm() {
   const [state, formAction, pending] = useActionState(submitBooking, initialState);
 
@@ -37,17 +39,45 @@ export function BookingForm() {
         <label className="text-xs font-extrabold text-[#34373b]">Service required <span className="text-[#8a8e93]">*</span>
           <select className={fieldClass} name="service" defaultValue="" required>
             <option value="" disabled>Select a service</option>
-            <option>Luxury Hand Wash</option><option>Interior Detailing</option><option>Paint Protection</option><option>Full Car Detailing</option><option>Steam Cleaning</option><option>Wax &amp; Polish</option><option>Other / Not sure</option>
+            <option>Exterior Body Wash</option><option>Luxury Hand Wash</option><option>Interior Detailing</option><option>Paint Protection</option><option>Full Car Detailing</option><option>Steam Cleaning</option><option>Wax &amp; Polish</option><option>Other / Not sure</option>
           </select>
         </label>
         <Field label="Vehicle" name="vehicle" placeholder="e.g. Toyota Land Cruiser" required />
         <Field label="Area / location" name="area" placeholder="e.g. JBR, Dubai" autoComplete="street-address" required />
-        <Field label="Preferred date" name="date" type="date" required />
-        <label className="text-xs font-extrabold text-[#34373b]">Preferred time <span className="text-[#8a8e93]">*</span>
-          <select className={fieldClass} name="time" defaultValue="" required>
-            <option value="" disabled>Select a time</option><option>8:00 AM – 11:00 AM</option><option>11:00 AM – 2:00 PM</option><option>2:00 PM – 5:00 PM</option><option>5:00 PM – 8:00 PM</option><option>Flexible</option>
+        <Field label="Start date" name="startDate" type="date" required />
+        <label className="text-xs font-extrabold text-[#34373b]">Select package <span className="text-[#8a8e93]">*</span>
+          <select className={fieldClass} name="package" defaultValue="" required>
+            <option value="" disabled>Select vehicle and frequency</option>
+            <optgroup label="Sedan Car">
+              <option value="Sedan Car — Once per week — AED 60">Once per week — AED 60</option>
+              <option value="Sedan Car — Twice per week — AED 100">Twice per week — AED 100</option>
+              <option value="Sedan Car — Thrice per week — AED 120">Thrice per week — AED 120</option>
+            </optgroup>
+            <optgroup label="SUV Car">
+              <option value="SUV Car — Once per week — AED 80">Once per week — AED 80</option>
+              <option value="SUV Car — Twice per week — AED 120">Twice per week — AED 120</option>
+              <option value="SUV Car — Thrice per week — AED 150">Thrice per week — AED 150</option>
+            </optgroup>
           </select>
         </label>
+      </div>
+
+      <fieldset className="mt-5 rounded-xl border border-[#dfe1e3] bg-[#f7f8f8] p-4">
+        <legend className="px-1 text-xs font-extrabold text-[#34373b]">Preferred days <span className="text-[#8a8e93]">*</span></legend>
+        <p className="mb-3 text-[11px] leading-5 text-[#777b80]">Choose your service days. Friday is our weekly day off.</p>
+        <div className="grid grid-cols-3 gap-2 max-sm:grid-cols-2">
+          {workingDays.map((day) => (
+            <label className="flex min-h-11 cursor-pointer items-center gap-2 rounded-lg border border-[#e1e3e5] bg-white px-3 text-xs font-bold text-[#45484c] transition hover:border-[#292b2e]" key={day}>
+              <input className="size-4 accent-[#292b2e]" type="checkbox" name="preferredDays" value={day} />
+              {day}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <div className="mt-5 flex items-center justify-between gap-4 rounded-xl border border-[#dfe1e3] bg-white px-4 py-3 text-sm">
+        <span className="font-extrabold text-[#34373b]">Service timing</span>
+        <span className="font-bold text-[#666a70]">5:00 PM – 2:00 AM</span>
       </div>
 
       <label className="mt-5 block text-xs font-extrabold text-[#34373b]">Additional notes (optional)

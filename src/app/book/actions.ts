@@ -11,7 +11,8 @@ export type BookingState = {
 
 const initialState: BookingState = { status: "idle", message: "" };
 
-const requiredFields = ["name", "phone", "service", "vehicle", "area", "date", "time"] as const;
+const requiredFields = ["name", "phone", "service", "vehicle", "area", "startDate", "package"] as const;
+const availableDays = new Set(["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]);
 
 function clean(value: FormDataEntryValue | null, maxLength = 200) {
   return String(value ?? "").trim().slice(0, maxLength);
@@ -41,14 +42,32 @@ export async function submitBooking(
     service: clean(formData.get("service"), 80),
     vehicle: clean(formData.get("vehicle"), 80),
     area: clean(formData.get("area"), 120),
-    date: clean(formData.get("date"), 20),
-    time: clean(formData.get("time"), 30),
+    startDate: clean(formData.get("startDate"), 20),
+    package: clean(formData.get("package"), 100),
+    preferredDays: formData.getAll("preferredDays").map((day) => clean(day, 20)).filter((day) => availableDays.has(day)),
+    timing: "5:00 PM – 2:00 AM",
     message: clean(formData.get("message"), 1000),
   };
 
   const missing = requiredFields.some((field) => !booking[field]);
   if (missing) {
     return { status: "error", message: "Please complete all required fields before submitting." };
+  }
+
+  if (!booking.preferredDays.length) {
+    return { status: "error", message: "Please select at least one preferred service day." };
+  }
+
+  const requiredDayCount = booking.package.includes("Thrice") ? 3 : booking.package.includes("Twice") ? 2 : 1;
+  if (booking.preferredDays.length !== requiredDayCount) {
+    return {
+      status: "error",
+      message: `This package requires exactly ${requiredDayCount} preferred ${requiredDayCount === 1 ? "day" : "days"}.`,
+    };
+  }
+
+  if (new Date(`${booking.startDate}T12:00:00Z`).getUTCDay() === 5) {
+    return { status: "error", message: "Friday is our weekly day off. Please choose another start date." };
   }
 
   if (!/^[+\d][\d\s()-]{6,24}$/.test(booking.phone)) {
@@ -66,9 +85,11 @@ export async function submitBooking(
     `Phone: ${booking.phone}`,
     `Service: ${booking.service}`,
     `Vehicle: ${booking.vehicle}`,
+    `Package: ${booking.package}`,
     `Area: ${booking.area}`,
-    `Preferred date: ${booking.date}`,
-    `Preferred time: ${booking.time}`,
+    `Start date: ${booking.startDate}`,
+    `Preferred days: ${booking.preferredDays.join(", ")}`,
+    `Service timing: ${booking.timing}`,
     booking.message ? `Notes: ${booking.message}` : "",
   ].filter(Boolean).join("\n");
 
@@ -91,7 +112,7 @@ export async function submitBooking(
             <h1 style="font-size:24px">New website booking request</h1>
             <p style="color:#62666b">Please contact the customer to confirm availability.</p>
             <table style="width:100%;border-collapse:collapse">
-              ${Object.entries(booking).map(([label, value]) => value ? `<tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:700;text-transform:capitalize">${escapeHtml(label)}</td><td style="padding:10px;border-bottom:1px solid #eee">${escapeHtml(value)}</td></tr>` : "").join("")}
+              ${Object.entries(booking).map(([label, value]) => value && (!Array.isArray(value) || value.length) ? `<tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:700;text-transform:capitalize">${escapeHtml(label)}</td><td style="padding:10px;border-bottom:1px solid #eee">${escapeHtml(Array.isArray(value) ? value.join(", ") : value)}</td></tr>` : "").join("")}
             </table>
             <p style="margin-top:24px"><a href="${whatsappUrl}" style="background:#292b2e;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none">Reply on WhatsApp</a></p>
           </div>`,
