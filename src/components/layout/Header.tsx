@@ -34,10 +34,8 @@ export function Header() {
         <div className="flex items-center gap-[15px]">
           <a
             className="group flex h-[44px] min-w-[190px] items-center justify-center gap-2.5 whitespace-nowrap rounded-lg bg-[#292b2e] px-[16px] text-xs font-extrabold text-white shadow-[0_8px_20px_#15151524] [animation:cta-attention_3.2s_ease-in-out_infinite] transition-colors hover:bg-black motion-reduce:animate-none max-[900px]:hidden"
-            href="https://wa.me/971528843059?text=Hello%20JM%20Car%20Wash%2C%20I%20would%20like%20to%20book%20an%20appointment."
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Book an appointment with JM Car Wash on WhatsApp"
+            href="/book"
+            aria-label="Open the JM Car Wash booking form"
           >
             <span className="grid size-7 place-items-center rounded-full bg-white/12 transition-transform group-hover:scale-110" aria-hidden="true">
               <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -45,7 +43,7 @@ export function Header() {
                 <path d="M8.2 7.7c.2-.42.4-.43.68-.44h.57c.18 0 .4.07.5.38l.7 1.75c.08.25.04.44-.1.62l-.55.7c-.15.17-.13.34-.03.52.68 1.16 1.65 2.08 2.84 2.7.2.1.37.08.5-.08l.78-.91c.17-.2.36-.23.6-.14l1.72.82c.25.12.42.26.43.45.03.6-.2 1.4-.63 1.83-.5.5-1.22.74-1.96.74-1.07 0-2.48-.48-4.23-2.03-2.04-1.81-3.2-4.15-3.1-5.42.03-.58.19-1.07.48-1.5Z" />
               </svg>
             </span>
-            Book on WhatsApp
+            Book a Service
           </a>
           <a className="group flex h-[44px] min-w-[112px] items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#dfe1e3] bg-white px-3 text-xs font-extrabold text-[#292b2e] shadow-[0_7px_18px_rgb(25_27_30_/_0.07)] [animation:cta-attention_3.2s_ease-in-out_.55s_infinite] transition-colors hover:border-[#bfc2c6] hover:bg-[#f4f5f6] motion-reduce:animate-none max-[900px]:hidden" href="tel:+971528843059" aria-label="Call JM Car Wash at +971 528843059">
             <span className="grid size-7 place-items-center rounded-full bg-[#eff0f1] text-sm transition-transform group-hover:scale-110" aria-hidden="true">☎</span>
