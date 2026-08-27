@@ -3,35 +3,16 @@
 import { useActionState } from "react";
 import { submitBooking, type BookingState } from "./actions";
 
-const initialState: BookingState = { status: "idle", message: "" };
-
 const fieldClass = "mt-2 h-13 w-full rounded-xl border border-[#dfe1e3] bg-white px-4 text-sm text-[#202226] outline-none transition placeholder:text-[#969a9f] focus:border-[#292b2e] focus:ring-3 focus:ring-[#292b2e]/8";
 
 const workingDays = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+const initialState: BookingState = { status: "idle", message: "" };
 
 export function BookingForm() {
   const [state, formAction, pending] = useActionState(submitBooking, initialState);
 
-  if (state.status === "success") {
-    return (
-      <div className="flex min-h-[520px] flex-col items-center justify-center rounded-[22px] border border-[#e1e3e5] bg-white p-8 text-center shadow-[0_18px_50px_rgb(26_28_31_/.08)]">
-        <div className="grid size-16 place-items-center rounded-full bg-[#292b2e] text-2xl text-white" aria-hidden="true">✓</div>
-        <p className="mt-6 text-xs font-extrabold tracking-[.14em] text-[#74787d] uppercase">Request prepared</p>
-        <h2 className="mt-2 text-3xl font-black tracking-[-1px] text-[#1d1f22]">One final step</h2>
-        <p className="mt-4 max-w-[470px] text-sm leading-7 text-[#666a70]">{state.message}</p>
-        {state.whatsappUrl && (
-          <a className="mt-7 flex h-14 min-w-[240px] items-center justify-center gap-3 rounded-xl bg-[#292b2e] px-6 text-sm font-extrabold text-white shadow-[0_12px_28px_rgb(24_26_29_/.18)] transition hover:-translate-y-0.5 hover:bg-black" href={state.whatsappUrl} target="_blank" rel="noreferrer">
-            <span className="grid size-7 place-items-center rounded-full bg-white/10" aria-hidden="true">◉</span>
-            Send on WhatsApp
-          </a>
-        )}
-        <button className="mt-5 text-xs font-bold text-[#666a70] underline underline-offset-4" type="button" onClick={() => window.location.reload()}>Make another booking</button>
-      </div>
-    );
-  }
-
   return (
-    <form className="rounded-[22px] border border-[#e1e3e5] bg-white p-7 shadow-[0_18px_50px_rgb(26_28_31_/.08)] max-sm:p-5" action={formAction}>
+    <form action={formAction} className="rounded-[22px] border border-[#e1e3e5] bg-white p-7 shadow-[0_18px_50px_rgb(26_28_31_/.08)] max-sm:p-5">
       <div className="grid grid-cols-2 gap-x-5 gap-y-5 max-sm:grid-cols-1">
         <Field label="Full name" name="name" placeholder="Your name" autoComplete="name" required />
         <Field label="Phone / WhatsApp" name="phone" type="tel" placeholder="+971 5X XXX XXXX" autoComplete="tel" required />
@@ -88,8 +69,8 @@ export function BookingForm() {
 
       {state.status === "error" && <p className="mt-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-bold text-red-700" role="alert">{state.message}</p>}
 
-      <button className="mt-6 flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#292b2e] px-6 text-sm font-extrabold text-white shadow-[0_12px_28px_rgb(24_26_29_/.16)] transition hover:bg-black disabled:cursor-wait disabled:opacity-60" type="submit" disabled={pending}>
-        {pending ? "Preparing your request…" : "Submit booking request"}<span aria-hidden="true">→</span>
+      <button className="mt-6 flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#292b2e] px-6 text-sm font-extrabold text-white shadow-[0_12px_28px_rgb(24_26_29_/.16)] transition hover:bg-black disabled:cursor-wait disabled:opacity-70" disabled={pending} type="submit">
+        {pending ? "Opening WhatsApp…" : "Submit booking request"}<span aria-hidden="true">→</span>
       </button>
       <p className="mt-4 text-center text-[11px] leading-5 text-[#85898e]">Submitting this form does not guarantee a slot. Our team will confirm availability with you.</p>
     </form>

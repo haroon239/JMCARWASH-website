@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
+import { redirect } from "next/navigation";
 
 export type BookingState = {
   status: "idle" | "success" | "error";
@@ -32,6 +33,7 @@ export async function submitBooking(
   _previousState: BookingState = initialState,
   formData: FormData,
 ): Promise<BookingState> {
+  void _previousState;
   const honeypot = clean(formData.get("company"));
   if (honeypot) return { status: "success", message: "Thank you. Your request has been received." };
 
@@ -97,12 +99,11 @@ export async function submitBooking(
   const apiKey = process.env.RESEND_API_KEY;
   const notificationEmail = process.env.BOOKING_NOTIFICATION_EMAIL || "jmcarwashandcleaning@gmail.com";
   const fromEmail = process.env.BOOKING_FROM_EMAIL || "JM Car Wash Bookings <onboarding@resend.dev>";
-  let emailSent = false;
 
   if (apiKey) {
     try {
       const resend = new Resend(apiKey);
-      const { error } = await resend.emails.send({
+      await resend.emails.send({
         from: fromEmail,
         to: [notificationEmail],
         replyTo: booking.email || undefined,
@@ -117,18 +118,8 @@ export async function submitBooking(
             <p style="margin-top:24px"><a href="${whatsappUrl}" style="background:#292b2e;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none">Reply on WhatsApp</a></p>
           </div>`,
       });
-      emailSent = !error;
-    } catch {
-      emailSent = false;
-    }
+    } catch {}
   }
 
-  return {
-    status: "success",
-    message: emailSent
-      ? "Your request has been sent. Please send the prepared WhatsApp message so our team can confirm your slot."
-      : "Your details are ready. Please send the prepared WhatsApp message so our team receives your request.",
-    whatsappUrl,
-    emailSent,
-  };
+  redirect(whatsappUrl);
 }
