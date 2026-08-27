@@ -23,8 +23,10 @@ export function BookingForm() {
             <option>Exterior Body Wash</option><option>Luxury Hand Wash</option><option>Interior Detailing</option><option>Paint Protection</option><option>Full Car Detailing</option><option>Steam Cleaning</option><option>Wax &amp; Polish</option><option>Other / Not sure</option>
           </select>
         </label>
-        <Field label="Vehicle" name="vehicle" placeholder="e.g. Toyota Land Cruiser" required />
+        <Field label="Vehicle registration number" name="vehicleRegistration" placeholder="e.g. A 12345" autoComplete="off" required />
         <Field label="Area / location" name="area" placeholder="e.g. JBR, Dubai" autoComplete="street-address" required />
+        <Field label="Building name" name="buildingName" placeholder="e.g. Marina Heights" autoComplete="address-line1" required />
+        <Field label="Apartment number" name="apartmentNumber" placeholder="e.g. Apartment 1204" autoComplete="address-line2" required />
         <Field label="Start date" name="startDate" type="date" required />
         <label className="text-xs font-extrabold text-[#34373b]">Select package <span className="text-[#8a8e93]">*</span>
           <select className={fieldClass} name="package" defaultValue="" required>

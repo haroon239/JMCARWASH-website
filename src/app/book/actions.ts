@@ -12,7 +12,7 @@ export type BookingState = {
 
 const initialState: BookingState = { status: "idle", message: "" };
 
-const requiredFields = ["name", "phone", "service", "vehicle", "area", "startDate", "package"] as const;
+const requiredFields = ["name", "phone", "service", "vehicleRegistration", "area", "buildingName", "apartmentNumber", "startDate", "package"] as const;
 const availableDays = new Set(["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]);
 
 function clean(value: FormDataEntryValue | null, maxLength = 200) {
@@ -42,8 +42,10 @@ export async function submitBooking(
     phone: clean(formData.get("phone"), 30),
     email: clean(formData.get("email"), 120),
     service: clean(formData.get("service"), 80),
-    vehicle: clean(formData.get("vehicle"), 80),
+    vehicleRegistration: clean(formData.get("vehicleRegistration"), 40),
     area: clean(formData.get("area"), 120),
+    buildingName: clean(formData.get("buildingName"), 120),
+    apartmentNumber: clean(formData.get("apartmentNumber"), 40),
     startDate: clean(formData.get("startDate"), 20),
     package: clean(formData.get("package"), 100),
     preferredDays: formData.getAll("preferredDays").map((day) => clean(day, 20)).filter((day) => availableDays.has(day)),
@@ -86,9 +88,11 @@ export async function submitBooking(
     `Name: ${booking.name}`,
     `Phone: ${booking.phone}`,
     `Service: ${booking.service}`,
-    `Vehicle: ${booking.vehicle}`,
+    `Vehicle registration number: ${booking.vehicleRegistration}`,
     `Package: ${booking.package}`,
     `Area: ${booking.area}`,
+    `Building name: ${booking.buildingName}`,
+    `Apartment number: ${booking.apartmentNumber}`,
     `Start date: ${booking.startDate}`,
     `Preferred days: ${booking.preferredDays.join(", ")}`,
     `Service timing: ${booking.timing}`,
