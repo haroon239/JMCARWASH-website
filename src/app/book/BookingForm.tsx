@@ -27,6 +27,7 @@ export function BookingForm() {
         <Field label="Area / location" name="area" placeholder="e.g. JBR, Dubai" autoComplete="street-address" required />
         <Field label="Building name" name="buildingName" placeholder="e.g. Marina Heights" autoComplete="address-line1" required />
         <Field label="Apartment number" name="apartmentNumber" placeholder="e.g. Apartment 1204" autoComplete="address-line2" required />
+        <Field label="Parking space / parking number" name="parkingSpace" placeholder="e.g. B2-145" autoComplete="off" required />
         <Field label="Start date" name="startDate" type="date" required />
         <label className="text-xs font-extrabold text-[#34373b]">Select package <span className="text-[#8a8e93]">*</span>
           <select className={fieldClass} name="package" defaultValue="" required>
