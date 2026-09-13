@@ -5,7 +5,7 @@ import { submitBooking, type BookingState } from "./actions";
 
 const fieldClass = "mt-2 h-13 w-full rounded-xl border border-[#dfe1e3] bg-white px-4 text-sm text-[#202226] outline-none transition placeholder:text-[#969a9f] focus:border-[#292b2e] focus:ring-3 focus:ring-[#292b2e]/8";
 
-const workingDays = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+const workingDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const initialState: BookingState = { status: "idle", message: "" };
 
 export function BookingForm() {
@@ -48,7 +48,7 @@ export function BookingForm() {
 
       <fieldset className="mt-5 rounded-xl border border-[#dfe1e3] bg-[#f7f8f8] p-4">
         <legend className="px-1 text-xs font-extrabold text-[#34373b]">Preferred days <span className="text-[#8a8e93]">*</span></legend>
-        <p className="mb-3 text-[11px] leading-5 text-[#777b80]">Choose your service days. Friday is our weekly day off.</p>
+        <p className="mb-3 text-[11px] leading-5 text-[#777b80]">Choose your service days. Sunday is our weekly day off.</p>
         <div className="grid grid-cols-3 gap-2 max-sm:grid-cols-2">
           {workingDays.map((day) => (
             <label className="flex min-h-11 cursor-pointer items-center gap-2 rounded-lg border border-[#e1e3e5] bg-white px-3 text-xs font-bold text-[#45484c] transition hover:border-[#292b2e]" key={day}>

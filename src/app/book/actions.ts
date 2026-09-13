@@ -13,7 +13,7 @@ export type BookingState = {
 const initialState: BookingState = { status: "idle", message: "" };
 
 const requiredFields = ["name", "phone", "service", "vehicleRegistration", "area", "buildingName", "apartmentNumber", "parkingSpace", "startDate", "package"] as const;
-const availableDays = new Set(["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]);
+const availableDays = new Set(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]);
 
 function clean(value: FormDataEntryValue | null, maxLength = 200) {
   return String(value ?? "").trim().slice(0, maxLength);
@@ -71,8 +71,8 @@ export async function submitBooking(
     };
   }
 
-  if (new Date(`${booking.startDate}T12:00:00Z`).getUTCDay() === 5) {
-    return { status: "error", message: "Friday is our weekly day off. Please choose another start date." };
+  if (new Date(`${booking.startDate}T12:00:00Z`).getUTCDay() === 0) {
+    return { status: "error", message: "Sunday is our weekly day off. Please choose another start date." };
   }
 
   if (!/^[+\d][\d\s()-]{6,24}$/.test(booking.phone)) {
